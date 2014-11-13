@@ -128,6 +128,10 @@
                 [workingDictionary setObject:img forKey:UIImagePickerControllerOriginalImage];
             }
 
+            [workingDictionary setObject:[asset valueForProperty:ALAssetPropertyDate] forKey:ALAssetPropertyDate];
+            [workingDictionary setObject:[NSValue valueWithCGSize:assetRep.dimensions] forKey:@"assetDimensions"];
+            [workingDictionary setObject:@(assetRep.size) forKey:@"size"];
+
             [workingDictionary setObject:[[asset valueForProperty:ALAssetPropertyURLs] valueForKey:[[[asset valueForProperty:ALAssetPropertyURLs] allKeys] objectAtIndex:0]] forKey:UIImagePickerControllerReferenceURL];
             
             [returnArray addObject:workingDictionary];
